@@ -1,29 +1,92 @@
-criar conexão com banco postgress trocar em Banco de Dados Sequelize
+## BOOTCAMP DESENVOLVEDOR BACKEND 
 
-mongo configurar uma conexão local,
+## DESAFIO FINAL
 
-Postgres - MongoDb - Sequelize
+# 📚 API de Gerenciamento de Livraria
 
-npm eu
+Este projeto é uma API RESTful desenvolvida em **Node.js** com **Express**, voltada para o gerenciamento de uma livraria. Ela permite o controle de clientes, autores, livros, vendas e informações adicionais dos livros, utilizando autenticação básica para proteger suas rotas.
 
-npm início
+## 🚀 Tecnologias Utilizadas
 
-###########################
+- [Node.js](https://nodejs.org/)
+- [Express](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/) (para informações adicionais dos livros)
+- [express-basic-auth](https://www.npmjs.com/package/express-basic-auth)
+- [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
-Exercitar os conceitos trabalhados para a criação de uma API em Node.js com 
-Express, organizada em camadas, com autenticação, persistência em bancos de dados 
-SQL, NoSQL e testes. 
+## 🔐 Autenticação
 
-O desafio consiste em desenvolver uma API para controle de uma livraria on-line. A API 
-deverá gerenciar os cadastros de livros, autores, clientes e vendas. Também deverá 
-gerenciar as informações da página de venda de cada livro com suas informações e 
-avaliações de leitores. Além disso, a API deverá ter controle de acesso aos endpoints, 
-consultando o usuário que deseja fazer a requisição em uma tabela de usuários no banco 
-de dados. Também será preciso desenvolver testes para a aplicação. 
+Todas as rotas são protegidas com **Basic Auth** utilizando o middleware `express-basic-auth`.
 
-1. Criação do banco de dados relacional:
+### 🧪 Credenciais Padrão:
 
-2. Criação do banco de dados NoSQL:
+- **Usuário:** `admin`
+- **Senha:** `admin`
 
-3. Desenvolvimento dos endpoints:
+### 📥 Exemplo de Requisição com Autenticação (Insomnia ou Postman)
+
+Adicione no cabeçalho da requisição:
+
+Authorization: Basic
+username:admin
+password:admin
+
+## 📁 Endpoints
+
+### 👥 Clientes
+
+- `GET /cliente` — Lista todos os clientes  
+- `GET /cliente/:id` — Detalha um cliente específico  
+- `POST /cliente` — Cria um novo cliente  
+- `PUT /cliente/:id` — Atualiza os dados de um cliente  
+- `DELETE /cliente/:id` — Remove um cliente  
+
+### ✍️ Autores
+
+- `GET /autor` — Lista todos os autores  
+- `POST /autor` — Cria um novo autor  
+- `PUT /autor/:id` — Atualiza um autor existente  
+- `DELETE /autor/:id` — Remove um autor  
+
+### 📚 Livros
+
+- `GET /livro` — Lista todos os livros  
+- `GET /livro/:id` — Detalha um livro específico  
+- `POST /livro` — Cria um novo livro  
+- `PUT /livro/:id` — Atualiza um livro existente  
+- `DELETE /livro/:id` — Remove um livro  
+
+### 💰 Vendas
+
+- `GET /venda` — Lista todas as vendas  
+- `POST /venda` — Cria uma nova venda  
+
+### 📖 Informações dos Livros (MongoDB)
+
+- `GET /livroInfo` — Lista todas as informações adicionais  
+- `POST /livroInfo` — Cria uma nova informação  
+- `PUT /livroInfo/:id` — Atualiza uma informação existente  
+- `DELETE /livroInfo/:id` — Remove uma informação  
+
+## 🛠️ Instalação e Execução
+npm install
+
+Inicie a API:
+npm start
+
+A API estará disponível em: http://localhost:3000
+
+🧑‍💻 Estrutura do Projeto
+pgsql
+Copiar
+Editar
+.
+├── routes/
+│   ├── cliente.route.js
+│   ├── autor.route.js
+│   ├── livro.route.js
+│   ├── venda.route.js
+│   └── livroInfo.mongo.route.js
+├── server.js
+└── package.json
   
